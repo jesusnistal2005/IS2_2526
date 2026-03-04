@@ -71,7 +71,7 @@ public class ClientesDAO implements IClientesDAO {
 	public Cliente eliminaCliente(String dni) throws DataAccessException {
 		Cliente cliente = cliente(dni);
 		Connection con = H2ServerConnectionManager.getConnection();
-		String statementText = "delete from Clientes where dni = " + dni;
+		String statementText = "delete from Clientes where dni = '" + dni + "'";
 		H2ServerConnectionManager.executeSqlStatement(statementText);
 		return cliente;
 	}
