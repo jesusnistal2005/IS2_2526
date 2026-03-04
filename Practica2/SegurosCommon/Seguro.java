@@ -116,7 +116,44 @@ public class Seguro {
 	 *         0 si el seguro todavía no está en vigor (no se ha alcanzado su fecha de inicio)
      */
 	public double precio() {
-		return 0;
+		if (fechaInicio == null || cobertura == null) {
+			return 0;
+		}
+
+		LocalDate hoy = LocalDate.now();
+		if (fechaInicio.isAfter(hoy)) {
+			return 0;
+		}
+
+		double base;
+		switch (cobertura) {
+		case TODO_RIESGO:
+			base = 1000;
+			break;
+		case TERCEROS_LUNAS:
+			base = 600;
+			break;
+		case TERCEROS:
+		default:
+			base = 400;
+			break;
+		}
+
+		double incrementoPotencia = 0;
+		if (potencia >= 90 && potencia <= 110) {
+			incrementoPotencia = base * 0.05;
+		} else if (potencia > 110) {
+			incrementoPotencia = base * 0.20;
+		}
+
+		double precio = base + incrementoPotencia;
+
+		// Durante el primer año (desde fechaInicio inclusive) hay un 20% de descuento.
+		if (hoy.isBefore(fechaInicio.plusYears(1))) {
+			precio *= 0.80;
+		}
+
+		return precio;
 	}
 	
 }
