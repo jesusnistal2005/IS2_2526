@@ -11,14 +11,15 @@ import java.util.List;
 public class SegurosDAO implements ISegurosDAO {
 
 	@Override
-	public Seguro creaSeguro(Seguro s) throws DataAccessException {
+	public Seguro creaSeguro(Seguro s, String dni) throws DataAccessException {
 		String insertStatement = String.format(
-				"insert into Seguros(matricula, fechaInicio, cobertura, potencia, conductorAdicional) values ('%s', '%s', '%s', %d, '%s')",
+				"insert into Seguros(matricula, fechaInicio, cobertura, potencia, conductorAdicional, cliente_FK) values ('%s', '%s', '%s', %d, %s, '%s')",
 				s.getMatricula(),
 				s.getFechaInicio().toString(),
 				s.getCobertura().toString(),
 				s.getPotencia(),
-				s.getConductorAdicional());
+				s.getConductorAdicional() == null ? "null" : "'" + s.getConductorAdicional() + "'",
+				dni);
 		H2ServerConnectionManager.executeSqlStatement(insertStatement);
 		return s;
 	}
