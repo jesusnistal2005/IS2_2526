@@ -1,0 +1,5 @@
+es\unican\is2\seguros\dao\h2\H2ServerConnectionManager.class
+es\unican\is2\seguros\dao\h2\ClientesDAO.class
+es\unican\is2\seguros\dao\h2\SegurosDAO.class
+es\unican\is2\seguros\dao\h2\ClienteMapper.class
+es\unican\is2\seguros\dao\h2\SeguroMapper.class
