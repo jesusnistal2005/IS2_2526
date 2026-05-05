@@ -1,3 +1,5 @@
+package es.unican.is2.adt;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,8 +20,12 @@ public class ConjuntoOrdenado<E extends Comparable<E>> implements IConjuntoOrden
 		if (elemento==null)
 			throw new NullPointerException();
 		if (lista.size() != 0) {
-			while (indice < lista.size() && elemento.compareTo(lista.get(indice)) < 0) {
+			while (indice < lista.size() && elemento.compareTo(lista.get(indice)) > 0) {
 				indice++;
+			}
+			// Verificar si el elemento ya existe (duplicado)
+			if (indice < lista.size() && elemento.compareTo(lista.get(indice)) == 0) {
+				return false;
 			}
 		}
 		lista.add(indice, elemento);
