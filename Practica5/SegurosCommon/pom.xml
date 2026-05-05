@@ -16,6 +16,13 @@
 
   <dependencies>
     <dependency>
+      <groupId>es.unican.is2</groupId>
+      <artifactId>abstract-data-types</artifactId>
+      <version>1.0</version>
+      <scope>system</scope>
+      <systemPath>${basedir}/../lib/AbstractDataTypes.jar</systemPath>
+    </dependency>
+    <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>${junit.version}</version>
