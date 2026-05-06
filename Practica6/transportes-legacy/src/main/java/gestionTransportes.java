@@ -1,6 +1,10 @@
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * WMC (McCabe): buscaConductor=3, anhadeConductor=2, conductores=1, total=6
+ * CCog: buscaConductor=3, anhadeConductor=1, total=4
+ */
 public class gestionTransportes {
 
 	private ArrayList<Conductor> cs = new ArrayList<Conductor>();

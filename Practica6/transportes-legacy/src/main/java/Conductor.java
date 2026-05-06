@@ -2,7 +2,9 @@ import java.util.ArrayList;
 
 /**
  * Clase que representa a un conductor, con sus datos personales
- * y los transportes que ha realizado. 
+ * y los transportes que ha realizado.
+ * WMC (McCabe): ctor=5, sueldo=8, anhadeTransporte=1, getters(8x1), total=22
+ * CCog: ctor=4, sueldo=12, resto=0, total=16
  */
 public class Conductor {
 

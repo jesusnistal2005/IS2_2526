@@ -4,6 +4,8 @@ import fundamentos.*;
 
 /**
  * Gestion de una empresa de transportes
+ * WMC (McCabe): main=16, mensaje=1, total=17
+ * CCog: main=45, mensaje=0, total=45
  */
 public class GestionTransportesGUI {
 

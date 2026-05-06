@@ -1,4 +1,7 @@
-/* Clase que representa un transporte realizado por un conductor */
+/* Clase que representa un transporte realizado por un conductor
+ * WMC (McCabe): ctor=4, horas=1, categoria=1, ton=1, getPersonas=1, total=8
+ * CCog: ctor=3, resto=0, total=3
+ */
 public class Transporte {
 	
 	private double horas;

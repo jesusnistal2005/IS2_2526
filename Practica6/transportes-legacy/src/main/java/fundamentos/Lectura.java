@@ -1,3 +1,7 @@
+/**
+ * WMC (McCabe): 3
+ * CCog: 0
+ */
 package fundamentos;
 
 public class Lectura {
